@@ -27,9 +27,8 @@ for root, dirs, files in os.walk(base_dir, topdown=True):
         n_days = (datetime.datetime.now() - date_modified_dt).days
 
         if n_days > n:
-
             if dry_run:
-                print("Modo dry run ativado")
+                print(f"[Dry-run ativado] Apagando arquivo {file_path}")
             else:
                 print(f"Apagando arquivo {file_path}")
                 os.remove(file_path)
